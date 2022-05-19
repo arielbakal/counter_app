@@ -8,7 +8,6 @@ class CounterScreen extends StatefulWidget {
 }
 
 class _CounterScreenState extends State<CounterScreen> {
-  
   int counter = 0;
 
   @override
@@ -33,31 +32,24 @@ class _CounterScreenState extends State<CounterScreen> {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         mainAxisSize: MainAxisSize.max,
         children: [
+          
           FloatingActionButton(
-            child: const Icon(Icons.remove),
-            onPressed: () {
-              if(counter > 0) {
-                counter--;
-              }
-              setState(() {});
-            },
             backgroundColor: Colors.red,
+            child: const Icon(Icons.remove),
+            onPressed: () => setState( () => { if(counter>0) counter-- })
           ),
+
           FloatingActionButton(
             child: const Icon(Icons.delete),
-            onPressed: () {
-              counter = 0;
-              setState(() {});
-            },
+            onPressed: () => setState( () => counter = 0)
           ),
+
           FloatingActionButton(
-            onPressed: () {
-              counter++;
-              setState(() {});
-          },
-          backgroundColor: Colors.green,
-          child: const Icon(Icons.add)
+            backgroundColor: Colors.green,
+            child: const Icon(Icons.add),
+            onPressed: () => setState( () => counter++)
           ),
+
         ],
       ),
     );
