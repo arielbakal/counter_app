@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -6,6 +5,8 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    const fontSize30 = TextStyle( fontSize: 30 );
 
     return Scaffold(
       appBar: AppBar(
@@ -16,10 +17,18 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: const <Widget>[
-            Text('Numero de Taps'),
-            Text('10')
+            Text('Numero de Taps', style: fontSize30 ),
+            Text('10', style: fontSize30 )
           ]
         ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat ,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          
+        },
+        backgroundColor: Colors.red,
+        child: const Icon(Icons.add)
       ),
     );
   }
